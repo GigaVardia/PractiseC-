@@ -1,0 +1,34 @@
+#pragma once
+#include "Matrix.h"
+//// SQUARE_MATRIX CLASS /////////
+class SQUARE_MATRIX :
+	public Matrix
+{
+protected:
+	int MAX_IN_MAIN_DG; // MAX IN MAIN DIAGONAL
+	int MIN_IN_MAIN_DG; // MIN IN MAIN DIAGONAL
+
+	int MAX_IN_NMAIN_DG; // MAX IN NOT MAIN DIAGONAL
+	int MIN_IN_NMAIN_DG; // MIN IN NOT MAIN DIAGONAL
+
+
+public:
+	SQUARE_MATRIX(int m) : Matrix(m, m) {
+		MAX_IN_MAIN_DG = 0; // MAX IN MAIN DIAGONAL
+		MIN_IN_MAIN_DG = 0; // MIN IN MAIN DIAGONAL
+
+		MAX_IN_NMAIN_DG = 0; // MAX IN NOT MAIN DIAGONAL
+		MIN_IN_NMAIN_DG = 0; // MIN IN NOT MAIN DIAGONAL
+	}
+
+	void FIND_MAX_MIN_DIAGONAL();
+	void ZERO_MATRIX();
+	void showMaxMinDG();
+
+	int getMAX_IN_MAIN_DG() { return MAX_IN_MAIN_DG; } // GET MAX IN MAIN DIAGONAL
+	int getMIN_IN_MAIN_DG() { return MIN_IN_MAIN_DG; } // GET MIN IN MAIN DIAGONAL
+
+	int getMAX_IN_NMAIN_DG() { return MAX_IN_NMAIN_DG; } // GET MAX IN NOT MAIN DIAGONAL
+	int getMIN_IN_NMAIN_DG() { return MIN_IN_NMAIN_DG; } // GET MIN IN NOT MAIN DIAGONAL
+};
+
